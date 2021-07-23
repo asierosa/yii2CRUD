@@ -110,7 +110,6 @@ class SiteController extends Controller
         }
         
         return $this->render('registerform', ['model' => $model,
-            
         ]);
     }
 
