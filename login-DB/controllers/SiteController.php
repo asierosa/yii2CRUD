@@ -100,6 +100,7 @@ class SiteController extends Controller
                 $model->Nombre = $_POST['RegisterForm']['Nombre'];
                 $model->Username = $_POST['RegisterForm']['Username'];
                 $model->Password = password_hash($_POST['RegisterForm']['Password'], PASSWORD_ARGON2I);
+                $model->Hash = Yii::$app->getSecurity()->generatePasswordHash($_POST['RegisterForm']['Password']);
                 $model->authKey = password_hash(random_bytes(5), PASSWORD_DEFAULT);
                 $model->accessToken = password_hash(random_bytes(10), PASSWORD_DEFAULT);
                 if($model -> save()){

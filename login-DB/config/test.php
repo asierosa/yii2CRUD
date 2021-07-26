@@ -1,4 +1,9 @@
-<?php
+<?php 'session' => array(
+    
+    'timeout' => 300,
+    
+),
+
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/test_db.php';
 

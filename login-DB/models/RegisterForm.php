@@ -11,6 +11,7 @@ use Yii;
  * @property string $Nombre
  * @property string $Username
  * @property string $Password
+ *  * @property string $Hash
  * @property string $authKey
  * @property string $accessToken
  */
@@ -29,9 +30,9 @@ class RegisterForm extends \yii\db\ActiveRecord
      */
     public function rules()
     {
-        return [
+        return[
             [['Nombre', 'Username', 'Password'], 'required'],
-            [['Nombre', 'authKey', 'accessToken'], 'string', 'max' => 255],
+            [['Nombre','Hash', 'authKey', 'accessToken'], 'string', 'max' => 255],
             [['Username'], 'string', 'max' => 50],
             [['Password'], 'string', 'max' => 100],
         ];
@@ -47,6 +48,7 @@ class RegisterForm extends \yii\db\ActiveRecord
             'Nombre' => 'Nombre',
             'Username' => 'Username',
             'Password' => 'Password',
+            'Hash' => 'Hash',
             'authKey' => 'Auth Key',
             'accessToken' => 'Access Token',
         ];
