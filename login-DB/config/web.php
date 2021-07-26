@@ -21,16 +21,16 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'app\models\Usuario',
-            'enableAutoLogin' => true,
+            'enableAutoLogin' => false,
+            'authTimeout' => 20, // auth expire
+        ],'session' => [
+            'class' => 'yii\web\Session',
+            'cookieParams' => ['httponly' => true, 'lifetime' => 10 * 4],
+            'timeout' => 10*4, //session expire
+            'useCookies' => true,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
-        ],
-        
-        'session' => [         
-        'timeout' => 60,
-        'cookieParams' => array('secure' => false, 'httponly' => false),
-        'cookieMode' =>'only',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -49,14 +49,6 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
     ],
     'params' => $params,
 ];
