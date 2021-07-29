@@ -36,7 +36,7 @@ AppAsset::register($this);
         ],
     ]);
     $navItem = [['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
+        ['label' => 'About', 'url' => ['/tareas/index']],
         ['label' => 'Contact', 'url' => ['/site/contact']],
     ];
     if(Yii::$app->user->isGuest){
