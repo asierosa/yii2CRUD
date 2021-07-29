@@ -21,13 +21,7 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'app\models\Usuario',
-            'enableAutoLogin' => false,
-            'authTimeout' => 20, // auth expire
-        ],'session' => [
-            'class' => 'yii\web\Session',
-            'cookieParams' => ['httponly' => true, 'lifetime' => 10 * 4],
-            'timeout' => 10*4, //session expire
-            'useCookies' => true,
+            'enableAutoLogin' => true,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -49,6 +43,14 @@ $config = [
             ],
         ],
         'db' => $db,
+        /*
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+            ],
+        ],
+        */
     ],
     'params' => $params,
 ];

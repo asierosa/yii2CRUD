@@ -73,7 +73,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return self::findOne(['Username' => $username]);
     }
     public function validatePassword($password){
-        return (Yii::$app->getSecurity()->validatePassword($password, $this->Hash));
+   return(Yii::$app->getSecurity()->validatePassword($password,  $this->Hash));
     }
 }
 
